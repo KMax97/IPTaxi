@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <script src="js/orders.js"></script>
+    <title>Заказать такси</title>
+</head>
+<body onload="LoadOrders();">
+    <div class="container">
+        <h2>Список заказов</h2>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Номер</th>
+                    <th>Адрес отправки</th>
+                    <th>Адрес назначения</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="orderListBody">
+            </tbody>
+        </table>
+        <h2>Добавить заказ</h2>
+        <form>
+            <fieldset>
+                <div class="form-group">
+                    <label for="orderAddedTelephone">Номер телефона</label>
+                    <input class="form-control" type="number" id="orderAddedTelephone" />
+                </div>
+                <div class="form-group">
+                    <label for="orderAddedStartStreet">Адрес отправки (улица)</label>
+                    <input class="form-control" type="text" id="orderAddedStartStreet" />
+                </div>
+                <div class="form-group">
+                    <label for="orderAddedStartHouse">Адрес отправки (дом)</label>
+                    <input class="form-control" type="number" id="orderAddedStartHouse" />
+                </div>
+                <div class="form-group">
+                    <label for="orderAddedEndStreet">Адрес назначения (улица)</label>
+                    <input class="form-control" type="text" id="orderAddedEndStreet" />
+                </div>
+                <div class="form-group">
+                    <label for="orderAddedEndHouse">Адрес назначения (дом)</label>
+                    <input class="form-control" type="number" id="orderAddedEndHouse" />
+                </div>
+                <button class="btn btn-success" type="button" onclick="EndOrderAdding();">Добавить</button>
+            </fieldset>
+        </form>
+        <h2>Редактировать заказ</h2>
+        <form>
+            <fieldset>
+                <div class="form-group">
+                    <label for="orderEditedTelephone">Номер телефона</label>
+                    <input class="form-control" type="number" id="orderEditedTelephone" readonly="readonly" />
+                </div>
+                <div class="form-group">
+                    <label for="orderEditedStartStreet">Адрес отправки (улица)</label>
+                    <input class="form-control" type="text" id="orderEditedStartStreet" />
+                </div>
+                <div class="form-group">
+                    <label for="orderEditedStartHouse">Адрес отправки (дом)</label>
+                    <input class="form-control" type="number" id="orderEditedStartHouse" />
+                </div>
+                <div class="form-group">
+                    <label for="orderEditedEndStreet">Адрес назначения (улица)</label>
+                    <input class="form-control" type="text" id="orderEditedEndStreet" />
+                </div>
+                <div class="form-group">
+                    <label for="orderEditedEndHouse">Адрес назначения (дом)</label>
+                    <input class="form-control" type="number" id="orderEditedEndHouse" />
+                </div>
+                <input style="display: none" type="text" id="orderHiddenEditedJson" />
+                <button class="btn btn-success" type="button" onclick="EndOrderEditing();">Применить</button>
+            </fieldset>
+        </form>
+        <br />
+    </div>
+</body>
+</html>

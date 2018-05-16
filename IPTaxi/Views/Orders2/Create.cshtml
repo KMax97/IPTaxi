@@ -1,0 +1,97 @@
+﻿@model IPTaxi.Models.Order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StartStreetId" class="control-label"></label>
+                <select asp-for="StartStreetId" class ="form-control" asp-items="ViewBag.StartStreetId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfStartHouse" class="control-label"></label>
+                <input asp-for="NumberOfStartHouse" class="form-control" />
+                <span asp-validation-for="NumberOfStartHouse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalStreetId" class="control-label"></label>
+                <select asp-for="FinalStreetId" class ="form-control" asp-items="ViewBag.FinalStreetId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfFinalHouse" class="control-label"></label>
+                <input asp-for="NumberOfFinalHouse" class="form-control" />
+                <span asp-validation-for="NumberOfFinalHouse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeOfEndingOrder" class="control-label"></label>
+                <input asp-for="TimeOfEndingOrder" class="form-control" />
+                <span asp-validation-for="TimeOfEndingOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfRecord" class="control-label"></label>
+                <select asp-for="NumberOfRecord" class ="form-control" asp-items="ViewBag.NumberOfRecord"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DispetcherId" class="control-label"></label>
+                <select asp-for="DispetcherId" class ="form-control" asp-items="ViewBag.DispetcherId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <select asp-for="ClientId" class ="form-control" asp-items="ViewBag.ClientId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RealValue" class="control-label"></label>
+                <input asp-for="RealValue" class="form-control" />
+                <span asp-validation-for="RealValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountOfWrittenPoints" class="control-label"></label>
+                <input asp-for="AmountOfWrittenPoints" class="form-control" />
+                <span asp-validation-for="AmountOfWrittenPoints" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Value" class="control-label"></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountOfAccruedPoints" class="control-label"></label>
+                <input asp-for="AmountOfAccruedPoints" class="form-control" />
+                <span asp-validation-for="AmountOfAccruedPoints" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

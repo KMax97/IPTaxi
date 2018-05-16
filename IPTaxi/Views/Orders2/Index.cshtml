@@ -1,0 +1,115 @@
+﻿@model IEnumerable<IPTaxi.Models.Order>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumberOfStartHouse)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Time)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumberOfFinalHouse)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeOfEndingOrder)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RealValue)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AmountOfWrittenPoints)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Value)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AmountOfAccruedPoints)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dispetcher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinalStreet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfRecordNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartStreet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfStartHouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfFinalHouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOfEndingOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RealValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfWrittenPoints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfAccruedPoints)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.ClientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dispetcher.DispetcherId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalStreet.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfRecordNavigation.NumberOfRecord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartStreet.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NumberOfOrder">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NumberOfOrder">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NumberOfOrder">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
