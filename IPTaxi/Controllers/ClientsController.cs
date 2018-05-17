@@ -17,7 +17,7 @@ namespace IPTaxi.Controllers
         {
             _context = context;
         }
-
+        //example
         // GET: Clients
         public async Task<IActionResult> Index()
         {
